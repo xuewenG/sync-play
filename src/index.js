@@ -14,6 +14,7 @@ app.ws('/blog/sync-play/socket/:clientId', (ws, req) => {
         clientId: clientId,
         socket: ws
     });
+    sendCurrentCount();
     ws.on('message', function (msg) {
         clients.forEach(client => {
             const socket = client.socket;
@@ -29,8 +30,19 @@ app.ws('/blog/sync-play/socket/:clientId', (ws, req) => {
                 clients.splice(i, 1);
             }
         }
+        sendCurrentCount();
     })
 });
+
+function sendCurrentCount() {
+    clients.forEach(client => {
+        const socket = client.socket;
+        socket.send(JSON.stringify({
+            event: 'count',
+            count: clients.length
+        }));
+    });
+}
 
 let port = 80;
 
