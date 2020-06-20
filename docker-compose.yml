@@ -1,0 +1,13 @@
+version: "3.8"
+networks:
+  my-bridge:
+    external:
+      name: my-bridge
+services:
+  sync-play:
+    build: .
+    image: ixuewen/sync-play
+    container_name: sync-play-docker
+    restart: always
+    networks:
+      - my-bridge

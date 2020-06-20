@@ -32,7 +32,7 @@ app.ws('/blog/sync-play/socket/:clientId', (ws, req) => {
     })
 });
 
-let port = 8080;
+let port = 80;
 
 app.listen(port);
 
