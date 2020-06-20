@@ -2,7 +2,6 @@ const express = require('express');
 const expressWs = require('express-ws');
 
 const app = express();
-
 expressWs(app);
 
 const clients = [];
@@ -47,5 +46,4 @@ function sendCurrentCount() {
 let port = 80;
 
 app.listen(port);
-
 console.log(`Server running at: http://127.0.0.1:${port}`);
