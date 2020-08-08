@@ -1,8 +1,8 @@
 import * as ws from 'ws'
 
 interface Client {
-  roomId: string
-  clientId: string
+  roomId: number
+  userId: number
   socket: ws
 }
 
