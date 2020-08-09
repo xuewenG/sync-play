@@ -16,7 +16,7 @@ function messageHandler(client: Client, msg: string): void {
     case SocketEvent.PAUSE:
     case SocketEvent.SYNC_FROM:
     case SocketEvent.PING:
-      syncHandler(client.roomId, client.userId, socketMessage)
+      syncHandler(client, socketMessage)
       break
   }
 }
