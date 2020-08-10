@@ -1,8 +1,8 @@
 import SocketEvent from './socketEvent'
 
-interface SocketMessage {
+interface SocketMessage<T> {
   event: SocketEvent
-  data: string
+  data: T
 }
 
 export default SocketMessage
