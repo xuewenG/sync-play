@@ -1,5 +1,6 @@
 import SocketEvent from '../../models/socketEvent'
 import syncHandler from '../eventHandler/syncHandler'
+import pingHandler from '../eventHandler/pingHandler'
 import Client from '../../models/client'
 
 function messageHandler(client: Client, msg: string): void {
@@ -15,9 +16,10 @@ function messageHandler(client: Client, msg: string): void {
     case SocketEvent.PLAY:
     case SocketEvent.PAUSE:
     case SocketEvent.SYNC_FROM:
-    case SocketEvent.PING:
       syncHandler(client, socketMessage)
       break
+    case SocketEvent.PING:
+      pingHandler(client, socketMessage)
   }
 }
 

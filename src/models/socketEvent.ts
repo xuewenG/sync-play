@@ -4,7 +4,8 @@ enum SocketEvent {
   PAUSE = 'pause',
   COUNT = 'count',
   PING = 'ping',
-  SYNC_FROM = 'sync_from'
+  SYNC_FROM = 'sync_from',
+  PONG = 'pong'
 }
 
 export default SocketEvent

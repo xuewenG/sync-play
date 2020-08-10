@@ -15,6 +15,8 @@ export function wsConnection(ws: ws, req: express.Request): void {
   const client = {
     roomId,
     userId,
+    currentTime: 0,
+    lastHandsake: new Date().getTime(),
     socket: ws
   }
   clients.push(client)
