@@ -1,8 +1,8 @@
 const env = process.env
 
 export const serverConfig = {
-  port: env.PORT || 8081,
-  contextPath: env.CONTEXT_PATH || '',
+  port: env.PORT || 8080,
+  contextPath: env.CONTEXT_PATH || '/sync-play',
   corsOrigin: (env.CORS_ORIGIN || '').split(',')
 }
 
