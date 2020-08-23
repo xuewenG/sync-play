@@ -24,6 +24,6 @@ COPY package.json $MY_HOME
 RUN set -x \
     && yarn install --production
 
-COPY --from=BUILDER /root/build .
+COPY --from=BUILDER /root/dist .
 
 ENTRYPOINT ["node", "index.js"]
