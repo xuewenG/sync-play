@@ -13,7 +13,8 @@ export function getVideoById(
         data: video
       })
     })
-    .catch(() => {
+    .catch((e: Error) => {
+      console.log(e)
       return response.json({ code: 4000 })
     })
 }
